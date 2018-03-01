@@ -13,7 +13,6 @@ pipeline {
  sh 'java -jar rectangle.jar 7 9'
  }
  }
- }
      stage ("Analyse") {
       steps {
         sh 'sloccount --duplicates --wide --details path-to-code/ > sloccount.sc'
@@ -24,7 +23,7 @@ pipeline {
         sloccountPublish encoding: '', pattern: ''
     }
 }
-     
+ }    
   post {
  success {
  archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
