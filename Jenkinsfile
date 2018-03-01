@@ -14,6 +14,17 @@ pipeline {
  }
  }
  }
+     stage ("Analyse") {
+      steps {
+        sh 'sloccount --duplicates --wide --details path-to-code/ > sloccount.sc'
+    }
+     }
+    stage ("Publish reports") {
+     steps {
+        sloccountPublish encoding: '', pattern: ''
+    }
+}
+     
   post {
  success {
  archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
