@@ -20,7 +20,7 @@ pipeline {
  }
      stage ("Analyse") {
       steps {
-        sh 'sloccount --duplicates --wide --details ${WORKSPACE}/<file|folder> > sloccount_report.sc'
+         sh 'sloccount --duplicates --wide --details path-to-code/ > sloccount.sc'
     }
      }
     }    
