@@ -20,7 +20,7 @@ pipeline {
  }
      stage ("Analyse") {
       steps {
-        sh 'sloccount --duplicates --wide --details path-to-code/ > sloccount.sc'
+        sh 'sloccount --duplicates --wide --details path-to-code/Downloads/content-jenkins-pipeline-master/content-jenkins-pipeline-master/src/ > sloccount.sc'
     }
      }
     }    
