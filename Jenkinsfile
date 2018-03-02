@@ -1,7 +1,7 @@
 pipeline {
  agent any
  stages {
- stage('start in acxiom') {
+ stage('build') {
  steps {
  sh 'javac -d . src/*.java'
  sh 'echo Main-Class: Rectangulator > MANIFEST.MF'
@@ -13,7 +13,7 @@ pipeline {
         sloccountPublish encoding: '', pattern: ''
     }
 }
- stage('next statefarm') {
+ stage('test') {
  steps {
  sh 'java -jar rectangle.jar 7 9'
  }
