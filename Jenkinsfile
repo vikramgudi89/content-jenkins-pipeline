@@ -41,11 +41,12 @@ sed -i \'s/\\/var\\/lib\\/jenkins\\/jobs\\///g\' files
 #head -n -1 files > temp; mv temp files
 #sort files | uniq -u > temp; mv temp files
 #cat files
-while read -r line
-do
-    echo $line
-    sloccount --duplicates --wide --details /var/lib/jenkins/workspace/$line >> sloccount.sc
-done < files'''
+#while read -r line
+#do
+#    echo $line
+    sloccount --duplicates --wide --details /var/lib/jenkins/workspace/ >> sloccount.sc
+#done < files'''
+       '''
     }
      }
     }    
