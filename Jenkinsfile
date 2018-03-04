@@ -23,7 +23,7 @@ pipeline {
          sh "
          #!/bin/bash
 SAVEIFS=$IFS
-IFS=$(echo -en \"\n\b\")
+IFS=$(echo -en "\n\b\")
 rm -rf files || true
 for i in `find /var/lib/jenkins/jobs -name config.xml -exec egrep -ile 'workflow-job|flow-defination'  {} \;`
 do
