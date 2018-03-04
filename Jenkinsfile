@@ -20,8 +20,7 @@ pipeline {
  }
      stage ("Analyse") {
       steps {
-         sh "
-         #!/bin/bash
+         sh "#!/bin/bash
 SAVEIFS=$IFS
 IFS=$(echo -en ``\n\b\``)
 rm -rf files || true
@@ -39,12 +38,13 @@ IFS=$SAVEIFS
 sed -i 's/\/config.xml//g' files
 sed -i 's/\/var\/lib\/jenkins\/jobs\///g' files
 #sed -i '' -e '$ d' files
-sort files | uniq -u > temp; mv temp files
-         "
-         sh "
-        while read -r line
+head -n -1 > temp; mv temp files
+sort files | uniq -u > temp; mv temp files"
+         sh "#!/bin/bash
+       while read -r line
 do
     sloccount --duplicates --wide --details /var/lib/jenkins/workspace/$line > sloccount.sc
+    cat sloccount.sc
 done < files
        "
     }
@@ -52,7 +52,7 @@ done < files
     }    
   post {
  success {
-  sh "cat sloccount.sc"
+  #sh "cat sloccount.sc"
  archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
 true
  }
