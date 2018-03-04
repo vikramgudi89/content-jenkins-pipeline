@@ -52,7 +52,7 @@ done < files'''
     }    
   post {
  success {
-  #sh "cat sloccount.sc"
+  //sh "cat sloccount.sc"
  archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
 true
  }
