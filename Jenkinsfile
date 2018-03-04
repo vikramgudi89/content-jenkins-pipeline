@@ -21,7 +21,7 @@ pipeline {
      stage ("Analyse") {
       steps {
        sh "pwd"
-         sh 'sloccount --duplicates --wide --details path-to-code/ > sloccount.sc'
+         sh 'sloccount --duplicates --wide --details . > sloccount.sc'
     }
      }
     }    
