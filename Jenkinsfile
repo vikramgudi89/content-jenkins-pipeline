@@ -20,7 +20,7 @@ pipeline {
  }
      stage ("Analyse") {
       steps {
-       
+        sh "$WORKSPACE && pwd"
          sh 'sloccount --duplicates --wide --details . > sloccount.sc'
     }
      }
