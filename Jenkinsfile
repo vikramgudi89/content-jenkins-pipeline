@@ -20,13 +20,14 @@ pipeline {
  }
      stage ("Analyse") {
       steps {
-       sh "pwd"
+       
          sh 'sloccount --duplicates --wide --details . > sloccount.sc'
     }
      }
     }    
   post {
  success {
+  sh "cat sloccount.sc"
  archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
 true
  }
