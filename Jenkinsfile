@@ -1,5 +1,6 @@
 pipeline {
  agent any
+ stages {
        stage ("Publish reports") {
      steps {
         sloccountPublish encoding: '', pattern: ''
@@ -11,4 +12,5 @@ pipeline {
     stage ("Publish reports") {
         sloccountPublish encoding: '', pattern: ''
     }
+}
 }
