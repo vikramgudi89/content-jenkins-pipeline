@@ -41,7 +41,7 @@ sed -i \'s/\\/var\\/lib\\/jenkins\\/jobs\\///g\' files
 #head -n -1 files > temp; mv temp files
 #sort files | uniq -u > temp; mv temp files
 #cat files
-sloccount --duplicates --wide --details /var/lib/jenkins/workspace/ > sloccount.sc'''
+sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc'''
     }
      }
     }    
