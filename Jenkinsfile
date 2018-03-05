@@ -1,11 +1,6 @@
 pipeline {
  agent any
  stages {
-       stage ("Publish reports") {
-     steps {
-        sloccountPublish encoding: '', pattern: ''
-    }
-}
     stage ("Analyse") {
         sh 'sloccount --duplicates --wide --details /var/lib/jenkins/workspace/ > sloccount.sc'
     }
