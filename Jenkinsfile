@@ -41,7 +41,7 @@ IFS=$SAVEIFS
 #head -n -1 files > temp; mv temp files
 #sort files | uniq -u > temp; mv temp files
 #cat files
-sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc'''
+sh `sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc`
     }
      }
     }    
