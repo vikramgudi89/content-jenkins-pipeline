@@ -19,6 +19,5 @@ pipeline {
     stage ("Publish reports") {
         sloccountPublish encoding: '', pattern: ''
     }
-}
- }
-}
+    }
+    }
