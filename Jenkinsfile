@@ -35,8 +35,8 @@ do
   fi  
 done
 IFS=$SAVEIFS
-sed -i \'s/\\/config.xml//g\' files
-sed -i \'s/\\/var\\/lib\\/jenkins\\/jobs\\///g\' files
+#sed -i \'s/\\/config.xml//g\' files
+#sed -i \'s/\\/var\\/lib\\/jenkins\\/jobs\\///g\' files
 #sed -i \'\' -e \'$ d\' files
 #head -n -1 files > temp; mv temp files
 #sort files | uniq -u > temp; mv temp files
