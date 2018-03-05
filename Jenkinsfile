@@ -13,5 +13,12 @@ pipeline {
  sh 'java -jar rectangle.jar 7 9'
  }
  }
+  stage ("Analyse") {
+        sh 'sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc'
+    }
+    stage ("Publish reports") {
+        sloccountPublish encoding: '', pattern: ''
+    }
+}
  }
 }
