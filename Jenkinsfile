@@ -1,25 +1,17 @@
 pipeline {
  agent any
  stages {
- stage('start in acxiom') {
+ stage('test') {
  steps {
  sh 'javac -d . src/*.java'
- sh 'echo main-class: rectangulator > manifest.mf'
- sh 'jar -cvmf manifest.mf rectangle.jar *.class'
-    }
-    }
- stage('next statefarm') {
+ sh 'echo Main-Class: Rectangulator > MANIFEST.MF'
+ sh 'jar -cvmf MANIFEST.MF rectangle.jar *.class'
+ }
+ }
+ stage('build') {
  steps {
  sh 'java -jar rectangle.jar 7 9'
-    }
-    }
-    }
-  post {
- success {
- archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
-    true
-    }
-     }
-    }
-
-    
+ }
+ }
+ }
+  
