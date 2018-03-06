@@ -21,7 +21,7 @@ pipeline {
      stage ("Analyse") {
       steps {
        sh "pwd"
-         sh 'sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc'
+         sh 'sloccount --duplicates --wide --details /var/lib/jenkins/ > sloccount.sc'
     }
      }
     }    
