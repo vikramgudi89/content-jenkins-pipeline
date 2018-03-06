@@ -21,14 +21,9 @@ pipeline {
      stage ("Analyse") {
       steps {
        sh "pwd"
-         sh 'sloccount --duplicates --wide --details /var/lib/jenkins/ > sloccount.sc'
+         sh 'sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc'
     }
      }
     }    
-  post {
- success {
- archiveArtifacts artifacts: 'rectangle.jar', fingerprint:
-true
- }
- }
+ 
 }
