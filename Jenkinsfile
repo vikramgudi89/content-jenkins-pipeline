@@ -24,6 +24,5 @@ pipeline {
          sh 'sloccount --duplicates --wide --details /var/lib/jenkins/jobs/ > sloccount.sc'
     }
      }
-    }    
- 
-
+    } 
+}   
