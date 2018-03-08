@@ -9,7 +9,7 @@ pipeline {
 }
       stage ("Analyse") {
       steps {
-sh 'sloccount --duplicates --wide --details /var/lib/jenkins/$workspace/ > sloccount.sc'
+sh 'sloccount --duplicates --wide --details /var/lib/jenkins/workspace/ > sloccount.sc'
     }
      }
     }    
