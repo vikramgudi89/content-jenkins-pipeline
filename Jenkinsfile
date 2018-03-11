@@ -9,7 +9,7 @@ pipeline {
 }
       stage ("Analyse") {
       steps {
-sh 'sloccount --duplicates --wide --details /$workspace/ > sloccount.sc'
+sh 'sloccount --duplicates --wide --details $workspace/ > sloccount.sc'
     }
      }
     }    
